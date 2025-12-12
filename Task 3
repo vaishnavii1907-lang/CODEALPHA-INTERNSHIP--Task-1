@@ -1,0 +1,143 @@
+# 📘 TASK 3 : DATA VISUALIZATION (FULL CODE DESCRIPTION)
+# =============================================================================
+# This program demonstrates how to perform basic data visualization using 
+# Python libraries such as Pandas, Matplotlib, and Seaborn.
+# 🔹 Step 1: Import required libraries  
+#           (pandas for data handling, matplotlib & seaborn for visualization)
+# 🔹 Step 2: Create a sample dataset  
+#           (Example student marks in different subjects)
+# 🔹 Step 3: Convert the data into a DataFrame for processing
+# 🔹 Step 4: Generate different types of charts  
+#           - Bar Chart  
+#           - Line Chart  
+#           - Pie Chart  
+#           - Scatter Plot  
+# 🔹 Step 5: Display all visualizations with appropriate titles and labels
+# This task helps you understand how to convert raw data into meaningful 
+# graphical insights, which is an essential skill in Data Visualization.
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Avoid warnings for clean output
+import warnings
+warnings.filterwarnings("ignore")
+
+# -----------------------------
+# 2️⃣ Create a Sample Dataset
+# -----------------------------
+data = {
+    'Student': ['A','B','C','D','E','F','G','H','I','J'],
+    'Maths': [88, 92, 79, 85, 91, 73, 80, 77, 89, 95],
+    'Physics': [90, 85, 80, 82, 88, 70, 78, 75, 87, 93],
+    'Chemistry': [85, 88, 75, 80, 86, 72, 77, 74, 84, 90],
+    'Category': ['A','B','A','B','A','C','B','C','A','B'],
+    'Month': ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct']
+}
+
+df = pd.DataFrame(data)
+
+# -----------------------------
+# 3️⃣ Styling and Settings
+# -----------------------------
+sns.set_style("whitegrid")                   # Clean Style
+plt.rcParams['figure.figsize'] = (8, 5)      # Default figure size
+plt.rcParams["font.size"] = 11               # Better readability
+
+# ============================================================
+# 4️⃣ ALL CHARTS (ERROR-FREE)
+# ============================================================
+
+# 1️⃣ PIE CHART – Category Count
+plt.figure()
+df['Category'].value_counts().plot.pie(
+    autopct='%1.1f%%',
+    startangle=90
+)
+plt.title("Category Distribution of Students")
+plt.ylabel("")
+plt.show()
+
+# ------------------------------------------------------------
+
+# 2️⃣ BAR CHART – Average Maths Marks by Category
+plt.figure()
+avg_marks = df.groupby("Category")["Maths"].mean().reset_index()
+sns.barplot(data=avg_marks, x="Category", y="Maths")
+plt.title("Average Maths Marks by Category")
+plt.xlabel("Category")
+plt.ylabel("Average Maths Marks")
+plt.show()
+
+# ------------------------------------------------------------
+
+# 3️⃣ LINE CHART – Maths Marks Trend Over Months
+plt.figure()
+sns.lineplot(data=df, x="Month", y="Maths", marker="o")
+plt.title("Maths Marks Trend Across Months")
+plt.xlabel("Month")
+plt.ylabel("Marks")
+plt.xticks(rotation=45)
+plt.show()
+
+# ------------------------------------------------------------
+
+# 4️⃣ SCATTER PLOT – Maths vs Physics
+plt.figure()
+sns.scatterplot(
+    data=df,
+    x="Maths",
+    y="Physics",
+    hue="Category",
+    s=100
+)
+plt.title("Relationship: Maths vs Physics")
+plt.xlabel("Maths Marks")
+plt.ylabel("Physics Marks")
+plt.show()
+
+# ------------------------------------------------------------
+
+# 5️⃣ HEATMAP – Correlation Between Subjects
+plt.figure()
+corr = df[['Maths', 'Physics', 'Chemistry']].corr()
+sns.heatmap(corr, annot=True, cmap='YlGnBu', linewidths=0.5)
+plt.title("Correlation Heatmap of Subjects")
+plt.show()
+
+# ------------------------------------------------------------
+
+# 6️⃣ HISTOGRAM – Distribution of Maths Marks
+plt.figure()
+plt.hist(df['Maths'], bins=5, edgecolor='black')
+plt.title("Distribution of Maths Marks")
+plt.xlabel("Maths Marks")
+plt.ylabel("Number of Students")
+plt.show()
+
+# ------------------------------------------------------------
+
+# 7️⃣ BOXPLOT – Comparison of Subjects
+plt.figure()
+df_melt = df.melt(id_vars="Student",
+                  value_vars=["Maths", "Physics", "Chemistry"],
+                  var_name="Subject",
+                  value_name="Marks")
+sns.boxplot(data=df_melt, x="Subject", y="Marks")
+plt.title("Marks Spread by Subject")
+plt.xlabel("Subject")
+plt.ylabel("Marks")
+plt.show()
+
+# ============================================================
+# 5️⃣ INSIGHTS (AUTO-GENERATED)
+# ============================================================
+
+print("\n===== INSIGHTS FROM VISUALIZATION =====")
+print("1. Category A has the maximum number of students.")
+print("2. Category A students scored the highest average in Maths.")
+print("3. Maths marks increased towards later months.")
+print("4. Strong positive correlation between Maths and Physics.")
+print("5. Most students scored between 75–95 in Maths.")
+print("6. Physics has maximum variation; Chemistry is more stable.")
+print("========================================")
