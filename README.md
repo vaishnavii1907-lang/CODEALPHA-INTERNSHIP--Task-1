@@ -1,5 +1,4 @@
 # CODEALPHA-INTERNSHIP--Task-1
-# CODEALPHA-INTERNSHIP--Task-1
 📊 Data Visualization – Internship Task
 
 Name: VAISHNAVI K
