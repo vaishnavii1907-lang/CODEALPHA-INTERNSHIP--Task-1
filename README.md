@@ -36,4 +36,11 @@ Developed a clear understanding of how to visualize data using Python.
 Learned to convert raw data into meaningful charts and graphs.
 Improved ability to analyze trends and insights visually.
 Gained practical experience in using visualization libraries like Matplotlib and Seaborn
+![Screenshot_12-12-2025_14444_localhost](https://github.com/user-attachments/assets/c502d880-626d-4d3d-9db4-9b7bab1a0e07)
 ![Screenshot_12-12-2025_14514_localhost](https://github.com/user-attachments/assets/5a6d44dc-0912-4111-b9e1-e95b4c9ab987)
+![Screenshot_12-12-2025_14110_localhost](https://github.com/user-attachments/assets/db7c6f1f-bd38-4b9e-b6fa-90a3ee261c26)
+![Screenshot_12-12-2025_141126_localhost](https://github.com/user-attachments/assets/3f366d94-af38-4c37-aa93-832a6aab4289)
+![Screenshot_12-12-2025_14126_localhost](https://github.com/user-attachments/assets/222b2ff7-c077-405c-8d9e-c973a7532049)
+![Screenshot_12-12-2025_141243_localhost](https://github.com/user-attachments/assets/5ad3ceb2-5b0a-4cbd-b444-01009c095df3)
+![Screenshot_12-12-2025_141328_localhost](https://github.com/user-attachments/assets/acb3865a-0436-40d9-90b5-d632c5133feb)
+![Screenshot_12-12-2025_141416_localhost](https://github.com/user-attachments/assets/6fedb0b9-9868-446f-8dbd-805273d6a52f)
